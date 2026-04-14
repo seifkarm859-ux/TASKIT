@@ -8,17 +8,14 @@ body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     line-height: 1.8;
     color: #333;
-    /* background: linear-gradient(135deg, #150303 0%, #764ba2 100%); */
     background-image: url("./img/Gemini_Generated_Image_k5ew32k5ew32k5ew.png");
     background-size: cover;
-        /* تخلي الصورة تملى الشاشة */
-        background-position: center;
-        /* توسيط الصورة */
-        background-repeat: no-repeat;
-        /* تمنع التكرار */
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
 }
 
+/* ===== HEADER ===== */
 header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -26,7 +23,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    
 }
 
 nav {
@@ -42,6 +38,13 @@ nav {
     font-size: 1.8rem;
     font-weight: bold;
     color: #667eea;
+}
+
+/* ===== NAV LINKS ===== */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
 nav a {
@@ -60,12 +63,11 @@ nav a.active {
     transform: translateY(-2px);
 }
 
-
+/* ===== MOBILE MENU ===== */
+@media (max-width: 768px) {
 
     nav ul {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 70px;
@@ -74,6 +76,7 @@ nav a.active {
         padding: 15px;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        z-index: 9999;
     }
 
     nav ul.show {
@@ -81,17 +84,13 @@ nav a.active {
     }
 }
 
+/* ===== MAIN ===== */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-
-    /* يخلي العنصر يطلع فوق */
     position: relative;
     top: -50px;
-    /* غيّر الرقم حسب المسافة اللي عايزها */
-
-    /* يخليه أقصى اليمين */
     margin-left: auto;
     margin-right: 0;
 }
@@ -103,30 +102,20 @@ h1 {
     font-size: 2.5rem;
 }
 
+/* ===== HERO ===== */
 .hero {
     text-align: right;
     padding: 4rem 0;
 }
-.hero h1{
-        font-size: 40px;
-        color: #fff;
-        text-shadow:
-            0 0 10px #00ffcc,
-            0 0 20px #00ffcc,
-            0 0 40px #00ffcc;
-    }
 
+.hero h1,
 .hero p {
-    
-            font-size: 40px;
-            color: #fff;
-            text-shadow:
-                0 0 10px #00ffcc,
-                0 0 20px #00ffcc,
-                0 0 40px #00ffcc;
-        
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
 }
 
+/* ===== CARDS ===== */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -135,31 +124,20 @@ h1 {
     gap: 20px;
 }
 
-
 .card {
     background-color: white;
     border-radius: 15px;
-    border-color: #01040f;
     padding: 15px;
     margin: 10px;
     box-shadow: 0 4px 8px rgba(7, 29, 224, 0.906);
     text-align: center;
     width: 280px;
-    box-sizing: border-box;
-    /* للتأكد من أن الحشو لا يزيد العرض */
-
-    /* تأثير انتقالي سلس لتأثيرات المرور */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    /* أنيميشن الظهور الأولي */
-    animation: fadeInScale 0.5s ease-out;
 }
 
-/* تأثير التكبير وزيادة الظل عند المرور */
 .card:hover {
     transform: translateY(-5px);
-    /* رفع البطاقة قليلاً */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .card img {
@@ -169,218 +147,29 @@ h1 {
     border-radius: 10px;
 }
 
-.card h3 {
-    margin: 10px 0 5px 0;
-    color: var(--text-dark);
-}
-
-.card p {
-    margin: 0;
-    color: #0a0101;
-    font-size: 0.9em;
-    height: 3.6em;
-    /* ارتفاع محدد لوصف الدورة */
-    overflow: hidden;
-}
-
-.card button {
-    margin-top: 10px;
-    background-color: rgb(30, 28, 28);
-    color: #eae3e3;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
-
-    /* أنيميشن */
-    transition: all 0.3s ease;
-
-    /* حركة خفيفة مستمرة */
-    animation: floatBtn 2s ease-in-out infinite;
-}
-
-/* عند المرور */
-.card button:hover {
-    background-color: blue;
-    transform: translateY(-8px) scale(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: right;
-    flex-wrap: wrap;
-}
-
+/* ===== BUTTONS ===== */
 .btn {
     background: transparent;
-        color: #e1e3ec;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 50px;
-        font-size: 1.1rem;
-        font-weight: bold;
-        text-decoration: none;
+    color: #e1e3ec;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(24, 8, 244, 0.548);
 }
 
 .btn:hover {
     background: white;
-        color: #667eea;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: white;
-    border: none;
-    box-shadow: #0051ff;
-}
-
-.btn-secondary:hover {
-    background: white;
     color: #667eea;
+    transform: translateY(-5px);
 }
 
-table {
-    width: 100%;
-    background-color: #01040f;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(239, 11, 11, 0.2);
-    margin-top: 2rem;
-}
-
-thead {
-    background: #667eea;
-    color: white;
-}
-
-th,
-td {
-    color: #00ffcc;
-    padding: 1.2rem;
-    text-align: center;
-    
-}
-td:hover{
-    color: #732134;
-}
-
-tbody tr {
-    transition: all 0.3s ease;
-}
-
-tbody tr:hover {
-    background: #f8f9ff;
-    transform: scale(1.02);
-}
-
-.sds {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgb(11, 22, 239);
-    max-width: 600px;
-    margin: 2rem auto;
-}
-
-
-input,
-textarea {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 2px solid #1a424f;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: border 0.3s ease;
-}
-
-
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: #0a30d7;
-}
-
-button[type="submit"] {
-    width: 100%;
-    background: #667eea;
-    color: white;
-    border: 2px solid rgb(40, 55, 132);
-    padding: 1.2rem;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background: #805ad8;
-    transform: translateY(-2px);
-}
-
+/* ===== FOOTER ===== */
 footer {
-background: #f8f5f5;
+    background: #f8f5f5;
     text-align: center;
     padding: 30px 20px;
     color: #0b0b0b;
-    box-shadow: #0051ff;
-}
-
-/* الايقونات */
-.social-icons {
-    margin-bottom: 15px;
-}
-
-.social-icons a {
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-.social-icons img {
-    width: 40px;
-    height: 40px;
-    transition: 0.3s;
-}
-
-/* Hover Effect */
-.social-icons a:hover img {
-    transform: scale(1.2);
-}
-
-/* النص */
-.footer p {
-    font-size: 14px;
-    color: #201a1a;
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-    }
-
-    .buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    th,
-    td {
-        padding: 0.8rem 0.4rem;
-        font-size: 0.9rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
 }
