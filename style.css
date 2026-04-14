@@ -8,14 +8,10 @@ body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     line-height: 1.8;
     color: #333;
-    /* background: linear-gradient(135deg, #150303 0%, #764ba2 100%); */
     background-image: url("./img/Gemini_Generated_Image_k5ew32k5ew32k5ew.png");
     background-size: cover;
-    /* تخلي الصورة تملى الشاشة */
     background-position: center;
-    /* توسيط الصورة */
     background-repeat: no-repeat;
-    /* تمنع التكرار */
     min-height: 100vh;
 }
 
@@ -25,7 +21,7 @@ header {
     box-shadow: 0 2px 20px rgba(3, 60, 248, 0.984);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 999; /* خلي الهيدر فوق أي عنصر */
 }
 
 nav {
@@ -101,14 +97,13 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    /* يخلي العنصر يطلع فوق */
     position: relative;
-    top: -50px;
-    /* غيّر الرقم حسب المسافة اللي عايزها */
-    /* يخليه أقصى اليمين */
     margin-left: auto;
     margin-right: 0;
 }
+
+/* باقي الكود زي ما هو بدون تغيير */
+
 
 h1 {
     text-align: right;
