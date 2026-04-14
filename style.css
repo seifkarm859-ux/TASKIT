@@ -8,14 +8,17 @@ body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     line-height: 1.8;
     color: #333;
+    /* background: linear-gradient(135deg, #150303 0%, #764ba2 100%); */
     background-image: url("./img/Gemini_Generated_Image_k5ew32k5ew32k5ew.png");
     background-size: cover;
+    /* تخلي الصورة تملى الشاشة */
     background-position: center;
+    /* توسيط الصورة */
     background-repeat: no-repeat;
+    /* تمنع التكرار */
     min-height: 100vh;
 }
 
-/* ===== HEADER ===== */
 header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -23,6 +26,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+
 }
 
 nav {
@@ -40,11 +44,11 @@ nav {
     color: #667eea;
 }
 
-/* ===== NAV LINKS ===== */
 nav ul {
     display: flex;
     list-style: none;
     gap: 2rem;
+    
 }
 
 nav a {
@@ -63,9 +67,6 @@ nav a.active {
     transform: translateY(-2px);
 }
 
-/* ===== MOBILE MENU ===== */
-@media (max-width: 768px) {
-
     nav ul {
         display: none;
         flex-direction: column;
@@ -75,8 +76,7 @@ nav a.active {
         background: white;
         padding: 15px;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        z-index: 9999;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     nav ul.show {
@@ -84,13 +84,17 @@ nav a.active {
     }
 }
 
-/* ===== MAIN ===== */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+
+    /* يخلي العنصر يطلع فوق */
     position: relative;
     top: -50px;
+    /* غيّر الرقم حسب المسافة اللي عايزها */
+
+    /* يخليه أقصى اليمين */
     margin-left: auto;
     margin-right: 0;
 }
@@ -102,56 +106,42 @@ h1 {
     font-size: 2.5rem;
 }
 
-/* ===== HERO ===== */
 .hero {
     text-align: right;
     padding: 4rem 0;
 }
 
-.hero h1,
-.hero p {
+.hero h1 {
     font-size: 40px;
     color: #fff;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+    text-shadow:
+        0 0 10px #00ffcc,
+        0 0 20px #00ffcc,
+        0 0 40px #00ffcc;
 }
 
-/* ===== CARDS ===== */
-.container {
+.hero p {
+
+    font-size: 40px;
+    color: #fff;
+    text-shadow:
+        0 0 10px #00ffcc,
+        0 0 20px #00ffcc,
+        0 0 40px #00ffcc;
+
+}
+.buttons {
     display: flex;
+    gap: 1rem;
+    justify-content: right;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
 }
 
-.card {
-    background-color: white;
-    border-radius: 15px;
-    padding: 15px;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(7, 29, 224, 0.906);
-    text-align: center;
-    width: 280px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* ===== BUTTONS ===== */
 .btn {
     background: transparent;
     color: #e1e3ec;
     padding: 1rem 2rem;
+    border: none;
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: bold;
@@ -164,12 +154,237 @@ h1 {
     background: white;
     color: #667eea;
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== FOOTER ===== */
+.btn-secondary {
+    background: transparent;
+    color: #e1e3ec;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(24, 8, 244, 0.548);
+
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #667eea;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    border-color: #01040f;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(7, 29, 224, 0.906);
+    text-align: center;
+    width: 280px;
+    box-sizing: border-box;
+    /* للتأكد من أن الحشو لا يزيد العرض */
+    /* تأثير انتقالي سلس لتأثيرات المرور */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* أنيميشن الظهور الأولي */
+    animation: fadeInScale 0.5s ease-out;
+}
+
+/* تأثير التكبير وزيادة الظل عند المرور */
+.card:hover {
+    transform: translateY(-5px);
+    /* رفع البطاقة قليلاً */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0 5px 0;
+    color: var(--text-dark);
+}
+
+.card p {
+    margin: 0;
+    color: #0a0101;
+    font-size: 0.9em;
+    height: 3.6em;
+    /* ارتفاع محدد لوصف الدورة */
+    overflow: hidden;
+}
+.card button {
+    background: transparent;
+        color: #210e0e;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 7px 15px rgba(17, 2, 228, 0.92);
+    /* حركة خفيفة مستمرة */
+    animation: floatBtn 2s ease-in-out infinite; */
+  
+}
+
+/* عند المرور */
+.card button:hover {
+    color: #c6c1ec;
+    background-color: rgb(37, 18, 45);
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(9, 12, 215, 0.3);
+}
+
+
+table {
+    width: 100%;
+    background-color: #01040f;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(239, 11, 11, 0.2);
+    margin-top: 2rem;
+}
+
+thead {
+    background: #667eea;
+    color: white;
+}
+
+
+td {
+    color: #00ffcc;
+    padding: 1.2rem;
+    text-align: center;
+
+}
+
+td:hover {
+    color: #732134;
+}
+
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background: #f8f9ff;
+    transform: scale(1.02);
+}
+
+.sds {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgb(11, 22, 239);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #1a424f;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+textarea:focus {
+    outline: none;
+    border-color: #0a30d7;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background: #667eea;
+    color: white;
+    border: 2px solid rgb(40, 55, 132);
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #805ad8;
+    transform: translateY(-2px);
+}
+
 footer {
     background: #f8f5f5;
     text-align: center;
     padding: 30px 20px;
     color: #0b0b0b;
+    box-shadow: #0051ff;
+}
+
+/* الايقونات */
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+/* النص */
+.footer p {
+    font-size: 14px;
+    color: #201a1a;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    th,
+    td {
+        padding: 0.8rem 0.4rem;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
 }
