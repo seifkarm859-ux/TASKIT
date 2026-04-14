@@ -44,12 +44,6 @@ nav {
     color: #667eea;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
 nav a {
     text-decoration: none;
     color: #3d2399;
@@ -69,7 +63,9 @@ nav a.active {
 
 
     nav ul {
-        display: none;
+        display: flex;
+        list-style: none;
+        gap: 2rem;
         flex-direction: column;
         position: absolute;
         top: 70px;
