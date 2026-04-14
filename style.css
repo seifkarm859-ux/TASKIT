@@ -1,82 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    line-height: 1.8;
-    color: #333;
-    background-image: url("./img/Gemini_Generated_Image_k5ew32k5ew32k5ew.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-}
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      line-height: 1.8;
+      color: #333;
+      background-image: url("./img/Gemini_Generated_Image_k5ew32k5ew32k5ew.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
 
-header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(3, 60, 248, 0.984);
-    position: sticky;
-    top: 0;
-    z-index: 999; /* خلي الهيدر فوق أي عنصر */
-}
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(3, 60, 248, 0.984);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #667eea;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-nav a:hover,
-nav a.active {
-    background: #732134;
-    color: rgb(205, 51, 51);
-    transform: translateY(-2px);
-}
-
-/* زر المنيو */
-.menu-btn {
-    display: none;
-}
-
-/* موبايل */
-@media (max-width: 768px) {
-    .menu-btn {
-        display: block;
-        font-size: 28px;
-        background: none;
-        border: none;
-        cursor: pointer;
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #667eea;
     }
 
     nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: #732134;
+      color: rgb(205, 51, 51);
+      transform: translateY(-2px);
+    }
+
+    /* زر المنيو */
+    .menu-btn {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* موبايل */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -85,22 +87,22 @@ nav a.active {
         background: white;
         padding: 15px;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+
+      .menu-btn:checked ~ ul {
+        display: flex; /* القائمة تظهر لما يتعلم على الـ checkbox */
+      }
     }
 
-    nav ul.show {
-        display: flex;
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      margin-left: auto;
+      margin-right: 0;
     }
-}
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    position: relative;
-    margin-left: auto;
-    margin-right: 0;
-}
 
 /* باقي الكود زي ما هو بدون تغيير */
 
