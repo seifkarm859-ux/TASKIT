@@ -66,21 +66,7 @@ nav a.active {
     transform: translateY(-2px);
 }
 
-/* زر المنيو */
-.menu-btn {
-    display: none;
-}
 
-/* موبايل */
-@media (max-width: 768px) {
-
-    .menu-btn {
-        display: block;
-        font-size: 28px;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
 
     nav ul {
         display: none;
